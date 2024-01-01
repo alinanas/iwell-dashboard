@@ -1,9 +1,73 @@
 /* You can add global styles to this file, and also import other style files */
 
 // Your variable overrides
-$primary: #007bff;
-$secondary: #6c757d;
+$primary: #00adef;
+$secondary: #8dc63f;
+$text: #58595b;
 // more overrides...
 
+:root {
+  --bs-card-cap-color: $primary;
+}
+
 // Import Bootstrap's source Sass files
-@import "../node_modules/bootstrap/scss/bootstrap";
+@import '../node_modules/bootstrap/scss/bootstrap';
+
+.logo {
+  max-width: 200px;
+  height: 80px;
+}
+
+.card {
+  color: $text;
+}
+
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:visited,
+.btn-primary:active,
+.btn-check:checked + .btn,
+:not(.btn-check) + .btn:active,
+.btn:first-child:active,
+.btn.active,
+.btn.show {
+  background-color: $secondary;
+  color: #fff;
+  font-family: Circular, Sans-serif;
+  font-weight: 700;
+  border-radius: 0 0 0 0;
+  border: none;
+  height: 40px;
+  margin-left: 10px;
+}
+
+.dropdown-menu {
+  border-radius: 0;
+  margin-left: 10px;
+  margin-top: 0 !important;
+  width: 100%;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+  color: var(--bs-dropdown-link-active-color);
+  text-decoration: none;
+  background-color: $secondary;
+}
+
+.value {
+  font-weight: 800;
+}
+
+.text-success {
+  color: $secondary;
+}
+.text-primary {
+  color: $primary;
+}
+
+.loader {
+  margin: 20px;
+  text-align: center;
+}

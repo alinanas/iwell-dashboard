@@ -1,0 +1,17 @@
+<div class="card">
+  <div class="card-header">Battery status</div>
+  <div class="card-body">
+    <div *ngIf="availableDischargePowerKw > 100" class="text-success">
+      Available
+    </div>
+    <div
+      *ngIf="availableDischargePowerKw < 100 && availableDischargePowerKw > 50"
+      class="text-warning"
+    >
+      Partially available
+    </div>
+    <div *ngIf="availableDischargePowerKw < 50" class="text-danger">
+      Not available
+    </div>
+  </div>
+</div>

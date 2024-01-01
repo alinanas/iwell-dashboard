@@ -1,0 +1,20 @@
+<div class="card">
+  <div class="card-header">Battery capacity remaining</div>
+  <div class="card-body">
+    <div>
+      Charge Capacity Remaining:
+      <span class="value" *ngIf="chargeCapacityRemainingKwh; else elseBlock"
+        >{{ chargeCapacityRemainingKwh }} Kwh</span
+      >
+    </div>
+    <div>
+      Discharge Capacity Remaining:
+      <span class="value" *ngIf="dischargeCapacityRemainingKwh; else elseBlock"
+        >{{ dischargeCapacityRemainingKwh }} Kwh</span
+      >
+    </div>
+    <ng-template #elseBlock
+      ><span class="text-danger">not available</span></ng-template
+    >
+  </div>
+</div>

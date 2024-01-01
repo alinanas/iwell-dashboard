@@ -1,0 +1,22 @@
+<div class="card">
+  <div class="card-header">Power</div>
+  <div class="card-body" *ngIf="!isLoading; else loader">
+    <div id="chart" *ngIf="chartOptions">
+      <apx-chart
+        [series]="chartOptions.series!"
+        [chart]="chartOptions.chart!"
+        [xaxis]="chartOptions.xaxis!"
+        [dataLabels]="chartOptions.dataLabels!"
+        [grid]="chartOptions.grid!"
+        [stroke]="chartOptions.stroke!"
+        [labels]="chartOptions.labels!"
+        [tooltip]="chartOptions.tooltip!"
+        [legend]="chartOptions.legend!"
+      ></apx-chart>
+    </div>
+  </div>
+</div>
+
+<ng-template #loader>
+  <app-loader class="loader"></app-loader>
+</ng-template>
