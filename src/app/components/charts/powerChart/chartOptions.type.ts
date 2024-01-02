@@ -8,6 +8,7 @@ import {
   ApexTooltip,
   ApexLegend,
   ApexYAxis,
+  ApexMarkers,
 } from 'ng-apexcharts';
 
 export type ChartOptions = {
@@ -21,4 +22,5 @@ export type ChartOptions = {
   stroke: ApexStroke;
   tooltip: ApexTooltip;
   legend: ApexLegend;
+  markers: ApexMarkers;
 };

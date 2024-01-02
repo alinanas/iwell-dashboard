@@ -48,6 +48,9 @@ const CHART_INIT_OPTIONS: Partial<ChartOptions> = {
       fillColors: CHART_COLORS,
     },
   },
+  markers: {
+    colors: CHART_COLORS,
+  },
 };
 
 export { DATA_TO_SHOW, CHART_COLORS, DATE_FORMAT, CHART_INIT_OPTIONS };

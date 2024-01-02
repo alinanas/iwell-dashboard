@@ -41,7 +41,7 @@ export class PowerChartComponent implements OnInit {
       .subscribe((data: BatteryTelemetryInterface) => {
         this.isLoading = false;
 
-        const dates = data.series?.[0].data.map((dateItem) =>
+        const dates = data.series?.[0]?.data.map((dateItem) =>
           new Date(dateItem?.[0]).toString()
         );
 
