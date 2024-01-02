@@ -69,10 +69,12 @@ Then you can install npm modules as usual.
 2. Application has a structure of components, interfaces and services
 3. .prettierrc file was added to add some linting to the application
 4. environments folder is empty - environment.ts file should be added there with the following code
+   ```
    export const environment = {
    API_KEY: 'here is the key',
    DEVICE_ID: 'here is device id to show'
    };
+   ```
    this file was added to .gitignore
 5. Angular Module were replaced with Standalone components as they are treeshakeable and less boiler and recomended to use by Angular team.
 6. Components are structured as following:
