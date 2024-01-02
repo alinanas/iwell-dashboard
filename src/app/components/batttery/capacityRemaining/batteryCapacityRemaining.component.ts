@@ -8,6 +8,6 @@ import { Component, Input } from '@angular/core';
   imports: [CommonModule],
 })
 export class BatteryCapacityRemainingComponent {
-  @Input() chargeCapacityRemainingKwh: number = 0;
-  @Input() dischargeCapacityRemainingKwh: number = 0;
+  @Input() chargeCapacityRemainingKwh: number;
+  @Input() dischargeCapacityRemainingKwh: number;
 }

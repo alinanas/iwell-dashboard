@@ -3,17 +3,19 @@
   <div class="card-body">
     <div>
       Charge Capacity Remaining:
-      <span class="value" *ngIf="chargeCapacityRemainingKwh; else elseBlock"
+      <span class="value" *ngIf="chargeCapacityRemainingKwh; else unavailable"
         >{{ chargeCapacityRemainingKwh }} Kwh</span
       >
     </div>
     <div>
       Discharge Capacity Remaining:
-      <span class="value" *ngIf="dischargeCapacityRemainingKwh; else elseBlock"
+      <span
+        class="value"
+        *ngIf="dischargeCapacityRemainingKwh; else unavailable"
         >{{ dischargeCapacityRemainingKwh }} Kwh</span
       >
     </div>
-    <ng-template #elseBlock
+    <ng-template #unavailable
       ><span class="text-danger">not available</span></ng-template
     >
   </div>

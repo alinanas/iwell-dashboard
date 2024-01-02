@@ -3,4 +3,5 @@ export interface BatteryTelemetryInterface {
     name: string;
     data: number[][];
   }[];
+  labels: string[];
 }

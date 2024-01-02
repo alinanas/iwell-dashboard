@@ -1,30 +1,37 @@
 <div class="container overflow-hidden">
-  <app-page-header (refreshData)="refreshData($event)"></app-page-header>
-  <ng-container *ngIf="data$ | async as data">
+  <app-page-header (refreshData)="getData($event)"></app-page-header>
+  <ng-container *ngIf="batteryStatus$ | async as batteryStatus">
     <div class="row mt-5 gx-5">
       <div class="col">
         <app-battery-status
-          [availableDischargePowerKw]="data.availableDischargePowerKw"
+          [availableDischargePowerKw]="batteryStatus.availableDischargePowerKw"
         ></app-battery-status>
       </div>
       <div class="col">
         <app-battery-power
-          [batteryPowerKw]="data.batteryPowerKw"
+          [batteryPowerKw]="batteryStatus.batteryPowerKw"
         ></app-battery-power>
       </div>
     </div>
     <div class="row mt-5">
       <div class="col">
         <app-battery-capacity-remaining
-          [chargeCapacityRemainingKwh]="data.chargeCapacityRemainingKwh"
-          [dischargeCapacityRemainingKwh]="data.dischargeCapacityRemainingKwh"
+          [chargeCapacityRemainingKwh]="
+            batteryStatus.chargeCapacityRemainingKwh
+          "
+          [dischargeCapacityRemainingKwh]="
+            batteryStatus.dischargeCapacityRemainingKwh
+          "
         ></app-battery-capacity-remaining>
       </div>
     </div>
   </ng-container>
   <div class="row mt-5">
     <div class="col">
-      <app-power-chart />
+      <app-power-chart
+        [telemetry]="telemetry$ | async"
+        [isLoading]="isLoading"
+      />
     </div>
   </div>
 </div>

@@ -6,5 +6,5 @@ import { Component, Input } from '@angular/core';
   templateUrl: 'batteryPower.component.html',
 })
 export class BatteryPowerComponent {
-  @Input() batteryPowerKw: number = 0;
+  @Input() batteryPowerKw: number;
 }
