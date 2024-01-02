@@ -7,9 +7,15 @@ import { BatteryStatusInterface } from './interfaces/batteryStatus.interface';
 import { CommonModule } from '@angular/common';
 import { BatteryPowerComponent } from './components/batttery/power/batteryPower.component';
 import { PowerChartComponent } from './components/charts/powerChart/powerChart.component';
-import { PageNavigationComponent } from './components/shared/pageNavigation/pageNavigation.component';
+import { PageHeaderComponent } from './components/shared/pageHeader/pageHeader.component';
 import { BatteryCapacityRemainingComponent } from './components/batttery/capacityRemaining/batteryCapacityRemaining.component';
 
+const timeFrameEnum = new Map<string, number>([
+  ['hour', -60],
+  ['day', -2400],
+  ['week', -16800],
+  ['month', -74400],
+]);
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -19,7 +25,7 @@ import { BatteryCapacityRemainingComponent } from './components/batttery/capacit
     BatteryStatusComponent,
     BatteryPowerComponent,
     PowerChartComponent,
-    PageNavigationComponent,
+    PageHeaderComponent,
     BatteryCapacityRemainingComponent,
     CommonModule,
   ],
@@ -41,8 +47,8 @@ export class AppComponent implements OnInit {
     this.data$ = this.api.getBatteryStatus(environment.DEVICE_ID);
   }
 
-  refreshData() {
+  refreshData(value: string) {
     this.getData();
-    this.powerChart.getData();
+    this.powerChart.getData(timeFrameEnum.get(value) || -60);
   }
 }

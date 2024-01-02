@@ -23,13 +23,13 @@ export class PowerChartComponent implements OnInit {
   constructor(private api: ApiService) {}
 
   ngOnInit(): void {
-    this.getData();
+    this.getData(-60);
   }
 
-  getData() {
+  getData(offSet: number) {
     this.isLoading = true;
     this.api
-      .getBatteryTelemetry(environment.DEVICE_ID, -60)
+      .getBatteryTelemetry(environment.DEVICE_ID, offSet)
       .pipe(
         take(1),
         map((data: BatteryTelemetryInterface) => ({

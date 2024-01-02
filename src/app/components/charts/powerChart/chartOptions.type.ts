@@ -7,12 +7,14 @@ import {
   ApexStroke,
   ApexTooltip,
   ApexLegend,
+  ApexYAxis,
 } from 'ng-apexcharts';
 
 export type ChartOptions = {
   series: ApexAxisChartSeries;
   chart: ApexChart;
   xaxis: ApexXAxis;
+  yaxis: ApexYAxis;
   dataLabels: ApexDataLabels;
   grid: ApexGrid;
   labels: string[];

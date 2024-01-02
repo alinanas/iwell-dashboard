@@ -1,5 +1,5 @@
 <div class="container overflow-hidden">
-  <app-page-navigation (refreshData)="refreshData()"></app-page-navigation>
+  <app-page-header (refreshData)="refreshData($event)"></app-page-header>
   <ng-container *ngIf="data$ | async as data">
     <div class="row mt-5 gx-5">
       <div class="col">

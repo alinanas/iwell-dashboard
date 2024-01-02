@@ -13,12 +13,29 @@
           data-bs-toggle="dropdown"
           aria-expanded="false"
         >
-          Select chart timeframe
+          Last {{ chartTimeFrame }} timeframe selected
         </button>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Last hour </a></li>
-          <li><a class="dropdown-item" href="#">Last day</a></li>
-          <li><a class="dropdown-item" href="#">Last month</a></li>
+          <li>
+            <a class="dropdown-item" href="#" (click)="selectTimeframe('hour')"
+              >Last hour
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#" (click)="selectTimeframe('day')"
+              >Last day</a
+            >
+          </li>
+          <li>
+            <a class="dropdown-item" href="#" (click)="selectTimeframe('week')"
+              >Last week</a
+            >
+          </li>
+          <li>
+            <a class="dropdown-item" href="#" (click)="selectTimeframe('month')"
+              >Last month</a
+            >
+          </li>
         </ul>
       </div>
       <button

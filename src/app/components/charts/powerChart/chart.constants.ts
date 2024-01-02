@@ -9,7 +9,7 @@ const CHART_INIT_OPTIONS: Partial<ChartOptions> = {
     type: 'line',
   },
   dataLabels: {
-    enabled: true,
+    enabled: false,
     style: {
       colors: CHART_COLORS,
     },
@@ -27,6 +27,9 @@ const CHART_INIT_OPTIONS: Partial<ChartOptions> = {
   },
   xaxis: {
     type: 'datetime',
+  },
+  yaxis: {
+    decimalsInFloat: 0,
   },
   tooltip: {
     x: {
